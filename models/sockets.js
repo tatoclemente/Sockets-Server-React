@@ -1,3 +1,4 @@
+const Markers = require("./markers");
 
 
 class Sockets {
@@ -5,6 +6,8 @@ class Sockets {
   constructor( io ) {
 
     this.io = io;
+
+    this.markers = new Markers()
 
     this.socketsEventes();
     
@@ -15,13 +18,14 @@ class Sockets {
     // On connection
     this.io.on('connection', ( socket ) => { 
 
-      // Escuchar evento: mensaje-to-server
-      socket.on('mensaje-to-server', (data) => {
-        console.log(data);
+      console.log('Cliente conectado');
+      // Todo: Marcadores activos
+      
 
-        // Emitir evento: mensaje-from-server
-        this.io.emit('mensaje-from-server', data)
-      })
+      // Todo: Marcador nuevo
+
+
+      // Todo: Marcador actualizado
       
     }); 
   }
